@@ -86,3 +86,51 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+//The total number of months included in the data set
+totalMonths = finances.length;
+
+console.log("Total number of months included in the dataset: " + totalMonths);
+
+//The net total amount of profit/losses over the entire period
+var positiveSum = 0;
+var negativeSum = 0;
+
+for (var i = 0; i < finances.length; i++) {
+  if (finances[i][1] > 0) {
+    positiveSum += finances[i][1];
+  } else {
+    negativeSum += finances[i][1];
+  }
+}
+
+var ratio = positiveSum / Math.abs(negativeSum);
+
+console.log("Ratio of proft to losses: " + ratio);
+
+//Average Changes
+var averageChanges = (ratio/(totalMonths-1));
+
+console.log("The average Profit/losses " + averageChanges);
+
+//The greatest increase in profit/losses over the entire period
+var maxPositive = 0;
+
+for (var i = 0; i < finances.length; i++) {
+  if (finances[i][1] > maxPositive) {
+    maxPositive = finances[i][0][1];
+  }
+}
+
+console.log("Greatest Increase in profit/loss: " + maxPositive);
+
+//The greatest increase in profit/losses over the entire period
+var maxNegative = 0;
+
+for (var i = 0; i < finances.length; i++) {
+  if (finances[i][1] < maxNegative) {
+    maxNegative = finances[i][0][1];
+  }
+}
+
+console.log("Greatest Decrease in profit/loss: " + maxNegative);
