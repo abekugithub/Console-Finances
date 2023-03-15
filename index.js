@@ -118,7 +118,7 @@ var maxPositive = 0;
 
 for (var i = 0; i < finances.length; i++) {
   if (finances[i][1] > maxPositive) {
-    maxPositive = finances[i][0][1];
+    maxPositive = finances[i][1];
   }
 }
 
@@ -129,7 +129,7 @@ var maxNegative = 0;
 
 for (var i = 0; i < finances.length; i++) {
   if (finances[i][1] < maxNegative) {
-    maxNegative = finances[i][0][1];
+    maxNegative = finances[i][1];
   }
 }
 
